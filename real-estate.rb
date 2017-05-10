@@ -7,11 +7,20 @@ class Development
 
 	attr_reader :floors
 
-
 	def initialize(floors)
 		@floors = floors
 	end
 
+end
+
+
+class Floor
+	attr_reader :units
+
+	def initialize(units)
+		@units = units
+
+	end
 end
 
 
@@ -22,9 +31,18 @@ class Apartment < Space
 
 	attr_reader :bedrooms, :rate
 
-	def initialize(bedrooms)
+	def initialize(bedrooms, floor)
 		@bedrooms = bedrooms
-		@rate = 700 + (@bedrooms * 300)
+		@floor = floor
+		@rate = calculate_rate
+	end
+
+	def calculate_rate
+		base_rate = 700
+		room_premium = 300 * @bedrooms
+		floor_premium = 30 * @floor
+
+		@rate = base_rate + room_premium + floor_premium
 	end
 
 end
@@ -37,8 +55,35 @@ class Condo < Space
 
 end
 
+
+
 class Commercial < Space
 end
 
+
+
+class Restaurnat < Commercial
+	end	
+
+
+
 class Tenant
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
