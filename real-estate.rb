@@ -1,4 +1,7 @@
 # Possible object: development, Tenant, Apartment, Condo, Commercial Space
+#possible floor object?
+#apartment base rate 700
+# + 300 per bedroom over 1 bedroom
 
 class Development
 
@@ -17,6 +20,13 @@ end
 
 class Apartment < Space
 
+	attr_reader :bedrooms, :rate
+
+	def initialize(bedrooms)
+		@bedrooms = bedrooms
+		@rate = 700 + (@bedrooms * 300)
+	end
+
 end
 
 class Condo < Space
@@ -28,7 +38,6 @@ class Condo < Space
 end
 
 class Commercial < Space
-
 end
 
 class Tenant
