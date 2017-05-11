@@ -1,11 +1,3 @@
-# Possible Objects: Development, Tenant, Apartment, Condo, Commercial Space
-# Possible Floor object?
-# apartment base rate 700
-# + 300/bedroom 
-########################################
-require './space.rb'
-require './tenant.rb'
-
 class Development
 	attr_reader :floors
 
@@ -66,7 +58,6 @@ class Commercial < Space
 
 	def initialize
 		@unit_count = 1
-		@rate = 5000
 		super("commercial")
 	end
 end
@@ -75,14 +66,19 @@ class Restaurant < Commercial
 
 	def initialize
 		@unit_count = 2
-		@rate = 12000
 	end
 end
 ########################################
 class Tenant
-
 end
 ########################################
+
+
+renter, buyers, 
+
+
+
+
 
 
 

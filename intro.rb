@@ -116,22 +116,41 @@
 # puts person
 
 
-house_words = ["Lannister", "Hear Me Roar!"]
+# house_words = ["Lannister", "Hear Me Roar!"]
 
-house_hash = {}
+# house_hash = {}
 
-house_key = house_words[0].to_sym
-house_value = house_words[1]
+# house_key = house_words[0].to_sym
+# house_value = house_words[1]
 
-house_hash[house_key] = house_value
+# house_hash[house_key] = house_value
 
-puts house_hash[:Lannister]
-puts house_hash
-
-
+# puts house_hash[:Lannister]
+# puts house_hash
 
 
+# Write a method that takes an array of numbers and 
+# creates a new array with only the even numbers from the first array.
 
+
+# def even
+# numbers = (1..50)
+# evenNum = []
+
+# numbers.select do |number|
+# 	if number % 2 == 0
+# 		evenNum.push(number)
+# 		end
+# 	end
+# 	p evenNum
+# end
+
+def even(num_array)
+	num_array.select! { |num| num.even? }
+end
+
+my_array = [1,2,3,4,5,6,7,8,9,10]
+p even(my_array)
 
 
 
